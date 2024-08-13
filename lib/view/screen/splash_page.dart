@@ -13,7 +13,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     Timer(
       const Duration(
-        seconds: 3,
+        seconds: 6,
       ),
           () {
         Navigator.of(context).pushNamed('/home');
@@ -24,18 +24,25 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.green.shade400,
       body: Center(
-        child: Container(
-          height: 270,
-          width: 270,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                '',
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              height: 150,
+              width: 150,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    'assets/sp.png',
+                  ),
+                ),
               ),
             ),
-          ),
+            Text('Habit Tracker',style: TextStyle(color: Colors.white,fontSize: 34,fontWeight: FontWeight.w500),)
+          ],
         ),
       ),
     );
